@@ -12,20 +12,20 @@ import org.openqa.selenium.WebElement;
 
 public class HistoryTest extends BaseTest {
 
-    // 🔐 Common Login Method
+
     public void login() {
         LoginPage lp = new LoginPage(driver);
         lp.goToLogin();
         lp.login("John Doe", "ThisIsNotAPassword");
     }
 
-    // 📅 Helper to Book Appointment
+
     public void bookAppointment(String facility, String date, String comment) {
         AppointmentPage ap = new AppointmentPage(driver);
         ap.bookAppointment(facility, date, comment, false);
     }
 
-    // ✅ TC_HIST_01 – Verify History Page Loads
+
     @Test(priority = 1)
     public void historyPageLoadTest() {
 
@@ -38,13 +38,13 @@ public class HistoryTest extends BaseTest {
                 "History page is NOT displayed");
     }
 
-    // ✅ TC_HIST_02 – Verify Latest Appointment Appears
+
     @Test(priority = 2)
     public void latestAppointmentTest() {
 
         login();
 
-        // Book appointment first
+
         bookAppointment("Tokyo CURA Healthcare Center",
                 "18/05/2026",
                 "Checkup Test");
@@ -61,7 +61,7 @@ public class HistoryTest extends BaseTest {
                 "Date not found in latest appointment");
     }
 
-    // ✅ TC_HIST_03 – Verify Table Headers (FULL VALIDATION)
+
     @Test(priority = 3)
     public void verifyHistoryFieldLabelsTest() {
 
@@ -76,7 +76,7 @@ public class HistoryTest extends BaseTest {
 
         List<WebElement> headers = hp.getHeaders();
 
-        // Expected headers
+
         String[] expectedHeaders = {
                 "Facility",
                 "Apply for hospital readmission",
@@ -84,7 +84,6 @@ public class HistoryTest extends BaseTest {
                 "Comment"
         };
 
-        // Validate each header
         for (String expected : expectedHeaders) {
 
             boolean found = false;

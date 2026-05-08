@@ -9,14 +9,14 @@ import pages.LoginPage;
 
 public class AppointmentTest extends BaseTest {
 
-    // Helper method for login
+
     public void login() {
         LoginPage lp = new LoginPage(driver);
         lp.goToLogin();
         lp.login("John Doe", "ThisIsNotAPassword");
     }
 
-    // ✅ TC_APPT_01 – Book Appointment (Valid Data)
+
     @Test(priority = 1)
     public void bookAppointmentTest() {
 
@@ -34,7 +34,7 @@ public class AppointmentTest extends BaseTest {
                 "Appointment not booked successfully");
     }
 
-    // ✅ TC_APPT_02 – Verify Confirmation Details
+
     @Test(priority = 2)
     public void verifyConfirmationDetailsTest() {
 
@@ -55,7 +55,7 @@ public class AppointmentTest extends BaseTest {
                 "16/05/2026");
     }
 
-    // ✅ TC_APPT_03 – Hospital Admission Checkbox
+
     @Test(priority = 3)
     public void hospitalAdmissionTest() {
 
@@ -73,7 +73,7 @@ public class AppointmentTest extends BaseTest {
                 "Yes");
     }
 
-    // ❌ TC_APPT_04 – Past Date Validation
+
     @Test(priority = 4)
     public void pastDateValidationTest() {
 

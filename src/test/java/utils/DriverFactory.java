@@ -17,10 +17,9 @@ public class DriverFactory {
 
             ChromeOptions options = new ChromeOptions();
 
-            // ✅ Only this line (your requirement)
+
             options.addArguments("--incognito");
 
-            // ✅ IMPORTANT: pass options
             return new ChromeDriver(options);
         }
 

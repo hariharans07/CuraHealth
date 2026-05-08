@@ -9,14 +9,14 @@ import pages.LoginPage;
 
 public class FormValidationTest extends BaseTest {
 
-    // 🔐 Login helper
+
     public void login() {
         LoginPage lp = new LoginPage(driver);
         lp.goToLogin();
         lp.login("John Doe", "ThisIsNotAPassword");
     }
 
-    // ❌ TC_FORM_01 – Empty Date Field
+
     @Test(priority = 1)
     public void emptyDateTest() {
 
@@ -35,7 +35,7 @@ public class FormValidationTest extends BaseTest {
                 "Appointment booked without date (validation failed)");
     }
 
-    // ❌ TC_FORM_02 – Empty Login Fields
+
     @Test(priority = 2)
     public void emptyLoginTest() {
 
@@ -50,7 +50,7 @@ public class FormValidationTest extends BaseTest {
                 "Login should fail with empty fields");
     }
 
-    // ✅ TC_FORM_03 – Long Comment Input
+
     @Test(priority = 3)
     public void longCommentTest() {
 
@@ -58,7 +58,7 @@ public class FormValidationTest extends BaseTest {
 
         AppointmentPage ap = new AppointmentPage(driver);
 
-        // ✅ FIXED HERE
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 20; i++) {
             sb.append("This is a very long comment ");
@@ -75,7 +75,7 @@ public class FormValidationTest extends BaseTest {
         Assert.assertTrue(cp.getComment().contains("This is a very long comment"),
                 "Long comment not accepted properly");
     }
-    // ❌ TC_FORM_04 – Invalid Date Format
+
     @Test(priority = 4)
     public void invalidDateFormatTest() {
 

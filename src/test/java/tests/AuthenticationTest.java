@@ -8,7 +8,7 @@ import pages.LoginPage;
 
 public class AuthenticationTest extends BaseTest {
 
-    // ✅ TC_LOGIN_01 – Valid Login
+
     @Test(priority = 1)
     public void validLoginTest() {
 
@@ -22,7 +22,7 @@ public class AuthenticationTest extends BaseTest {
                 "User is not redirected to appointment page after login");
     }
 
-    // ❌ TC_LOGIN_02 – Invalid Login
+
     @Test(priority = 2)
     public void invalidLoginTest() {
 
@@ -36,7 +36,7 @@ public class AuthenticationTest extends BaseTest {
                 "Error message not displayed for invalid login");
     }
 
-    // 🔓 TC_LOGIN_03 – Logout
+
     @Test(priority = 3)
     public void logoutTest() {
 
@@ -53,7 +53,7 @@ public class AuthenticationTest extends BaseTest {
                 "User not redirected to homepage after logout");
     }
 
-    // 🔐 TC_LOGIN_04 – Unauthorized Access
+
     @Test(priority = 4)
     public void unauthorizedAccessTest() {
 
