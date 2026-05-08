@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Cura Suite" parallel="false">
+
+    <!-- Listener (keep if you implemented it) -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="All Tests">
+
+        <classes>
+            <class name="tests.AuthenticationTest"/>
+            <class name="tests.AppointmentTest"/>
+            <class name="tests.HistoryTest"/>
+            <class name="tests.MultipleAppointmentTest"/>
+            <class name="tests.FormValidationTest"/>
+        </classes>
+
+    </test>
+
+</suite>
